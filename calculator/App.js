@@ -26,13 +26,13 @@ const plusCount = () => {
       <View style={{flex: 0.1, flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around'}} >
       <Text>Result: {answer.toFixed(2)} </Text>
       <TextInput style= {{width: 200,
-      borderColor: 'gray',
+      borderColor: 'blue',
       borderWidth: 1, }}
       onChangeText = {number1 => setNumber1(number1)}
       value ={String(number1)}
       keyboardType={'numeric'} />
         <TextInput style= {{width: 200,
-        borderColor: 'gray',
+        borderColor: 'red',
         borderWidth: 1,}}
         onChangeText = {number2 => setNumber2(number2)}
         value ={String(number2)}
