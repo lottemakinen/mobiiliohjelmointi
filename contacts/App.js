@@ -6,24 +6,25 @@ import * as Contacts from 'expo-contacts';
 
 export default function App() {
 
-  const [contact, setContact] = useState({});
+  const [contacts, setContacts] = useState({});
 
   const getContacts = async() => {
-    const { status } = awaitContacts.requestPermissionsAsync();
+    const { status } = await Contacts.requestPermissionsAsync();
     if (status === 'granted') {
-      const { data } = awaitContacts.getContactsAsync({
+      const { data } = await Contacts.getContactsAsync({
         fields:[Contacts.Fields.PhoneNumbers],
       });
       if (data.length > 0) {
-        setContact(data[0]);
+        setContacts(data[0]);
       }
     }
   }
 
   return (
     <View style={styles.container}>
-      <Text>{contact.name  }</Text>
-      <Button title="Get Contact" onPress={getContacts} />
+      <Text>{ contacts.name }</Text>
+      <Text>{ contacts.number }</Text>
+      <Button title="Get Contacts" onPress={getContacts} />
       <StatusBar style="auto" />
     </View>
   );
