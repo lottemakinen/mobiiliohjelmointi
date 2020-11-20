@@ -70,7 +70,7 @@ export default function App() {
       <FlatList 
         style={{marginLeft : "5%", marginTop: 40}}
         keyExtractor={item => item.id.toString()} 
-        renderItem={({item}) => <View style={styles.listcontainer}><Text style={{fontSize: 18}}>{item.sport}, {item.time} h</Text>
+        renderItem={({item}) => <View style={styles.listcontainer}><Text style={{fontSize: 18}}>{item.sport}, {item.time}</Text>
         <Text style={{fontSize: 18, color: '#0000ff'}} onPress={() => deleteItem(item.id)}> Done </Text></View>} 
         data={practices} 
         ItemSeparatorComponent={listSeparator} 
